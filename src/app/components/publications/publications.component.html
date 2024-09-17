@@ -1,0 +1,48 @@
+<app-banner [title]="title | uppercase"></app-banner>
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="text-primary text-uppercase">// Publications Clients //</h6>
+            <h1 class="mb-5">Wellcome Publications Clients</h1>
+        </div>
+        <div class="row g-4">
+           
+            
+            <div class="col-md-12">
+                <div class="wow fadeInUp" data-wow-delay="0.2s">
+                    <form  #publicationsForm="ngForm" (ngSubmit)="addPublications()" >
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name"  [(ngModel)]="publications.name"  [ngModelOptions]="{standalone: true}"       placeholder="Your Name">
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" [(ngModel)]="publications.email"  [ngModelOptions]="{standalone: true}"  placeholder="Your Email">
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" [(ngModel)]="publications.subject"  [ngModelOptions]="{standalone: true}"  placeholder="Subject">
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message"   [(ngModel)]="publications.message"  [ngModelOptions]="{standalone: true}"  style="height: 100px"></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

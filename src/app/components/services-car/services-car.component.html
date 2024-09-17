@@ -1,0 +1,13 @@
+<app-banner [title]="title | uppercase"></app-banner>
+<div class="text-center">
+    <h6 class="text-primary text-uppercase">// Service //</h6>
+    <h1 class="mb-5">Our Service </h1>
+</div>
+<div class="container-fluid fact bg-dark my-5 py-5">
+  
+    <div class="container" *ngFor="let job of jobs">
+        <div class="row g-4">
+           <app-jobs [inputService]="job"  ></app-jobs>
+        </div>
+    </div>
+</div>

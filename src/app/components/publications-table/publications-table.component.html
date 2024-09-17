@@ -1,0 +1,44 @@
+<app-banner  [title]="title | uppercase" ></app-banner>
+<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+    <h6 class="text-primary text-uppercase">//Publications Table  //</h6>
+    <h1 class="mb-5">Publications Table Clients</h1>
+</div>
+<table class="table">
+    <thead class="thead-warning">
+      <tr>
+        <th scope="col">Images</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Message</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let publ of publications">
+        <td> <img src="assets/img/publ.png" alt="" srcset="" width="50px" height="50px" > </td>
+        <td>{{publ.name}}</td>
+        <td>{{publ.email}}</td>
+        <td>{{publ.subject}}</td>
+        <td>{{publ.message}}</td>
+        <td>{{publ.publicite[0]?.firstName}}</td>
+        <td>{{publ.publicite[0]?.lastName}}</td>
+        <td>{{publ.publicite[0]?.telephone}}</td>
+        <td>{{publ.publicite[0]?.adresse}}</td>
+
+
+
+        <td>
+            <input type="image" id="image" (click)=" deletePublications(publ._id)"  alt="" src="/assets/img/delete.png" width="50px" height="50px" />
+
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+  
+ 

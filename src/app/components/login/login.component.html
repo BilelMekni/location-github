@@ -1,0 +1,85 @@
+<app-banner [title]="title | uppercase"></app-banner> 
+
+
+    
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase">//Login //</h6>
+                <h1 class="mb-5">Hellow Login</h1>
+            </div>
+            <div class="row g-4">
+               
+                <div class="col-md-4 wow fadeIn">
+                    <iframe class="position-relative rounded w-100 h-100"
+                        src="assets/img/l.jpg"></iframe>
+                </div>
+                <div class="col-md-6">
+                    <div class="wow fadeInUp" data-wow-delay="0.2s">
+                        <form [formGroup]="loginForm" >
+                            <div class="row g-3">
+                               
+                                <div class="col-12">
+                                    <i class="fa fa-envelope" ></i>
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="subject"  formControlName="email"  placeholder="Email">
+                                        <label for="subject">Email</label>
+                                    </div>
+                                </div>
+                                <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].touched ||
+                                loginForm.controls['email'].dirty)" >
+                                <div *ngIf="loginForm.controls['email'].errors.required" class="red" >
+                                    Email is required
+                                </div>
+                                <div *ngIf="loginForm.controls['email'].errors.email" class="red" >
+                                    Email is invalid
+
+                                </div>
+
+                                </div>
+                                <div class="col-12">
+                                    <i class="fa fa-key icon"></i>
+                                    <div class="form-floating">
+                                        <input type="password"class="form-control" formControlName="password"   placeholder="Password" id="message">
+                                        <label for="message">Password</label>
+                                    </div>
+                                </div>
+                                <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].touched ||
+                                loginForm.controls['password'].dirty)" >
+                                <div *ngIf="loginForm.controls['password'].errors.required" class="red">
+                                    Password is required
+
+                                </div>
+                                <div *ngIf="loginForm.controls['password'].errors.pattern" class="red" >
+                                    Password not valid (Minimum eight characters,
+                                    At least one uppercase letter,
+                                    At least one lowercase letter,
+                                    At least one number,
+                                    At least one special character).
+
+                                </div>
+
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3"  (click)="login()" type="submit">Login</button>
+                                    <span style="color: red;">{{errorMsg}}</span><br>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-success w-100 py-3" (click)="creatAccount()" type="submit">
+                                        Or Create an Account</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+   
+
+

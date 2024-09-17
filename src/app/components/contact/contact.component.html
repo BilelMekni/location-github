@@ -1,0 +1,107 @@
+<app-banner [title]="title | uppercase" ></app-banner>
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="text-primary text-uppercase">// Contact Us //</h6>
+            <h1 class="mb-5">Hellow Conatct Cars</h1>
+        </div>
+        <div class="row g-4">
+           
+            <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                <iframe class="position-relative rounded w-100 h-100" src="assets/img/contact.jpg">
+                </iframe>
+            </div>
+            <div class="col-md-6">
+                <div class="wow fadeInUp" data-wow-delay="0.2s">
+                    <form  [formGroup]="contactForm" >
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" formControlName="name" placeholder="Your Name">
+                                    <label for="name">Your Name</label>
+                                </div>
+                                <div *ngIf="contactForm.controls['name'].invalid && (contactForm.controls['name'].touched || contactForm.controls['name'].dirty)" >
+                                <div *ngIf="contactForm.controls['name'].errors.required" class="red">
+                                    Name is required
+
+                                </div>
+                                <div *ngIf="contactForm.controls['name'].errors.minlength" class="red">
+                                    Name must have at last 3 chars
+
+                                </div>
+                                <div *ngIf="contactForm.controls['name'].errors.maxlength" class="red">
+                                    Name must have at most 20 chars
+
+                                </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" formControlName="email" placeholder="Your Email">
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div *ngIf="contactForm.controls['email'].invalid && (contactForm.controls['email'].touched || contactForm.controls['email'].dirty)" >
+                              <div *ngIf="contactForm.controls['email'].errors.required" class="red">
+                                Email is required
+
+                              </div>
+                              <div *ngIf="contactForm.controls['email'].errors.email" class="red" >
+                                Email is invalid
+
+                              </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="Your Phone">
+                                    <label for="name">Your Phone</label>
+                                </div>
+                                <div *ngIf="contactForm.controls['phone'].invalid && (contactForm.controls['phone'].touched || contactForm.controls['name'].dirty)" >
+                                <div *ngIf="contactForm.controls['phone'].errors.required" class="red">
+                                    Phone is required
+
+                                </div>
+                                <div *ngIf="contactForm.controls['phone'].errors.minlength" class="red">
+                                    Phone must have at last 8 number
+
+                                </div>
+                                <div *ngIf="contactForm.controls['phone'].errors.maxlength" class="red">
+                                    Phone must have at most 8 number
+
+                                </div>
+
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control"  formControlName="message" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                    <label for="name">Your Message</label>
+                                </div>
+                                <div *ngIf="contactForm.controls['message'].invalid && (contactForm.controls['message'].touched || contactForm.controls['name'].dirty)" >
+                                <div *ngIf="contactForm.controls['message'].errors.required" class="red">
+                                    Message is required
+
+                                </div>
+                                <div *ngIf="contactForm.controls['message'].errors.minlength" class="red">
+                                    Message must have at last 3 chars
+
+                                </div>
+                                <div *ngIf="contactForm.controls['message'].errors.maxlength" class="red">
+                                    Message must have at most 1000 chars
+
+                                </div>
+
+                                </div>
+                            </div>
+        
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" (click)="contact()"  type="submit">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<app-banner [title]="title | uppercase"></app-banner>
+<h6 class="text-primary text-uppercase">// Clients //</h6>
+
+<div class="container-xxl py-5">
+    <div class="container" *ngFor="let p of personnes">
+       <app-personne [inputPersonne]="p" ></app-personne>
+    </div>
+</div>

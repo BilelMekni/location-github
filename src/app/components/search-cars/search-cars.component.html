@@ -1,0 +1,100 @@
+<app-banner [title]="title | uppercase"></app-banner>
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="text-primary text-uppercase">// Search Cars //</h6>
+            <h1 class="mb-5">Wellcome Search Cars</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="row gy-4">
+
+                </div>
+            </div>
+            <div class="col-md-4 wow fadeIn" data-wow-delay="0.1s">
+                <img src="assets/img/ser.jpg" alt="" srcset="">
+               
+            </div>
+            <div class="col-md-6"> 
+                <div class="wow fadeInUp" data-wow-delay="0.2s">
+                    <form [formGroup]="searchForm">
+                        <div class="row g-3">
+
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="pays" formControlName="pays"
+                                        placeholder="Pays">
+                                    <label for="pays">Pays</label>
+                                </div>
+                            </div>
+                            <div *ngIf="searchForm.controls['pays'].invalid && (searchForm.controls['pays'].touched ||
+                            searchForm.controls['pays'].dirty)">
+                                <div *ngIf="searchForm.controls['pays'].errors.required" class="red">
+                                    Pays is required
+
+                                </div>
+                                <div *ngIf="searchForm.controls['pays'].errors.minlength" class="red">
+                                    Pays must have ata last 3 chars
+
+                                </div>
+                                <div *ngIf="searchForm.controls['pays'].errors.maxlength" class="red">
+                                    Pays must have at most 20 chars
+
+                                </div>
+
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="date" formControlName="price"
+                                        placeholder="Color">
+                                    <label for="dataN">Price</label>
+                                </div>
+                            </div>
+
+                            <div *ngIf="searchForm.controls['price'].invalid && (searchForm.controls['price'].touched ||
+                            searchForm.controls['price'].dirty)">
+                                <div *ngIf="searchForm.controls['price'].errors.required" class="red">
+                                    Price is required
+
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" (click)="searchCars()" type="submit">Search
+                                    Cars</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+               
+            </div>
+        </div>
+       
+    </div>
+    
+</div>
+<div *ngFor="let serch of searche">
+    <table class="table table-info">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Pays</th>
+                <th scope="col">Price</th>
+                <th scope="col">Color</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>{{serch.name}}</td>
+            <td>{{serch.pays}}</td>
+            <td>{{serch.price}}</td>
+            <td>{{serch.color}}</td>
+
+        </tr>
+
+    </table>
+   
+
+</div>
+<div *ngIf="searche?.length== 0" style="color: tomato; font-size: 70px; text-decoration: underline; text-align: center;">
+    Not Found Cars
+ </div>

@@ -1,0 +1,176 @@
+<app-banner [title]="title | uppercase"></app-banner>
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="text-primary text-uppercase">// Add Car //</h6>
+            <h1 class="mb-5">Wellcome Add Car</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="row gy-4">
+
+                </div>
+            </div>
+            <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                <iframe class="position-relative rounded w-100 h-100" src="assets/img/add.avif">
+                </iframe>
+            </div>
+            <div class="col-md-6">
+                <div class="wow fadeInUp" data-wow-delay="0.2s">
+                    <form [formGroup]="carForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" formControlName="name"
+                                        placeholder="Your Name">
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div *ngIf="carForm.controls['name'].invalid && (carForm.controls['name'].touched ||
+                            carForm.controls['name'].dirty)">
+                                <div *ngIf="carForm.controls['name'].errors.required" class="red">
+                                    Name is required
+
+                                </div>
+                                <div *ngIf="carForm.controls['name'].errors.minlength" class="red">
+                                    Name must have ata last 3 chars
+
+                                </div>
+                                <div *ngIf="carForm.controls['name'].errors.maxlength" class="red">
+                                    Name must have at most 20 chars
+
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" formControlName="matricule"
+                                        placeholder="Your Name">
+                                    <label for="name">Your Registration Number</label>
+                                </div>
+                            </div>
+                            <div *ngIf="carForm.controls['matricule'].invalid && (carForm.controls['matricule'].touched ||
+                            carForm.controls['matricule'].dirty)">
+                                <div *ngIf="carForm.controls['matricule'].errors.required" class="red">
+                                    Registration is required
+
+                                </div>
+                                <div *ngIf="carForm.controls['matricule'].errors.minlength" class="red">
+                                    Registration must have ata last 3 chars
+
+                                </div>
+                                <div *ngIf="carForm.controls['matricule'].errors.maxlength" class="red">
+                                    Registration must have at most 20 chars
+
+                                </div>
+
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="date" formControlName="color"  placeholder="Color">
+                                    <label for="dataN">Color</label>
+                                </div>
+                            </div>
+                           
+                            <div *ngIf="carForm.controls['color'].invalid && (carForm.controls['color'].touched ||
+                            carForm.controls['color'].dirty)">
+                                <div *ngIf="carForm.controls['color'].errors.required" class="red">
+                                    Color is required
+
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="pays" formControlName="pays"
+                                        placeholder="Pays">
+                                    <label for="pays">Pays</label>
+                                </div>
+                            </div>
+                            <div *ngIf="carForm.controls['pays'].invalid && (carForm.controls['pays'].touched ||
+                            carForm.controls['pays'].dirty)">
+                                <div *ngIf="carForm.controls['pays'].errors.required" class="red">
+                                    Pays is required
+
+                                </div>
+                                <div *ngIf="carForm.controls['pays'].errors.minlength" class="red">
+                                    Pays must have ata last 3 chars
+
+                                </div>
+                                <div *ngIf="carForm.controls['pays'].errors.maxlength" class="red">
+                                    Pays must have at most 20 chars
+
+                                </div>
+
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="date" formControlName="price"  placeholder="Color">
+                                    <label for="dataN">Price</label>
+                                </div>
+                            </div>
+                           
+                            <div *ngIf="carForm.controls['price'].invalid && (carForm.controls['price'].touched ||
+                            carForm.controls['price'].dirty)">
+                                <div *ngIf="carForm.controls['price'].errors.required" class="red">
+                                    Price is required
+
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" formControlName="guarantee"
+                                        placeholder="Your Name">
+                                    <label for="name">Your Guarantee</label>
+                                </div>
+                            </div>
+                            <div *ngIf="carForm.controls['guarantee'].invalid && (carForm.controls['guarantee'].touched ||
+                            carForm.controls['guarantee'].dirty)">
+                                <div *ngIf="carForm.controls['guarantee'].errors.required" class="red">
+                                    Guarantee is required
+
+                                </div>
+                                <div *ngIf="carForm.controls['guarantee'].errors.minlength" class="red">
+                                    Guarantee must have ata last 3 chars
+
+                                </div>
+                                <div *ngIf="carForm.controls['guarantee'].errors.maxlength" class="red">
+                                    Guarantee must have at most 20 chars
+
+                                </div>
+
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="date" class="form-control" id="date" formControlName="date"  placeholder="Date of Birth Car">
+                                    <label for="dataN">Date of Birth Car</label>
+                                </div>
+                            </div>
+                            <div *ngIf="carForm.controls['date'].invalid && (carForm.controls['date'].touched ||
+                            carForm.controls['date'].dirty)">
+                                <div *ngIf="carForm.controls['date'].errors.required" class="red">
+                                    Date is required
+
+                                </div>
+
+                            </div>
+                            <div class="form-group" style="visibility: hidden;">
+                                <input type="file" class="form-control" #filePicker (change)="onImageSelected($event)">
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-success" (click)="filePicker.click()">Please select your
+                                    avatar</button>
+                                <br>
+                                <img [src]="imagePreview" *ngIf="imagePreview" class="pt-3 pb-3" width="200px"
+                                    height="200px" alt="">
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" (click)="addCar()" type="submit">Add Car</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

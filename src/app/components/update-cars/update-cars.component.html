@@ -1,0 +1,153 @@
+<app-banner [title]="title | uppercase" ></app-banner>
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="text-primary text-uppercase">// Update Cars//</h6>
+            <h1 class="mb-5">Wellcome Update Cars</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="row gy-4">
+
+                </div>
+            </div>
+            <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                <iframe class="position-relative rounded w-100 h-100" src="assets/img/upd.jpg">
+                </iframe>
+            </div>
+            <div class="col-md-6">
+                <div class="wow fadeInUp" data-wow-delay="0.2s">
+                    <form [formGroup]="updateForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" formControlName="name"
+                                        placeholder="Your Name">
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div *ngIf="updateForm.controls['name'].invalid && (updateForm.controls['name'].touched ||
+                            updateForm.controls['name'].dirty)">
+                                <div *ngIf="updateForm.controls['name'].errors.required" class="orange">
+                                    Name is required
+
+                                </div>
+                                <div *ngIf="updateForm.controls['name'].errors.minlength" class="orange">
+                                    Name must have ata last 3 chars
+
+                                </div>
+                                <div *ngIf="updateForm.controls['name'].errors.maxlength" class="red">
+                                    Name must have at most 20 chars
+
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" readonly id="name" formControlName="matricule"
+                                        placeholder="Your Name">
+                                    <label for="name">Your Registration Number</label>
+                                </div>
+                            </div>
+                            <div *ngIf="updateForm.controls['matricule'].invalid && (updateForm.controls['matricule'].touched ||
+                            updateForm.controls['matricule'].dirty)">
+                                <div *ngIf="updateForm.controls['matricule'].errors.required" class="orange">
+                                    Registration is required
+
+                                </div>
+                                <div *ngIf="updateForm.controls['matricule'].errors.minlength" class="orange">
+                                    Registration must have ata last 3 chars
+
+                                </div>
+                                <div *ngIf="updateForm.controls['matricule'].errors.maxlength" class="orange">
+                                    Registration must have at most 20 chars
+
+                                </div>
+
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control"  id="date" formControlName="color"  placeholder="Color">
+                                    <label for="dataN">Color</label>
+                                </div>
+                            </div>
+                           
+                            <div *ngIf="updateForm.controls['color'].invalid && (updateForm.controls['color'].touched ||
+                            updateForm.controls['color'].dirty)">
+                                <div *ngIf="updateForm.controls['color'].errors.required" class="orange">
+                                    Color is required
+
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="pays" formControlName="pays"
+                                        placeholder="Pays">
+                                    <label for="pays">Pays</label>
+                                </div>
+                            </div>
+                            <div *ngIf="updateForm.controls['pays'].invalid && (updateForm.controls['pays'].touched ||
+                            updateForm.controls['pays'].dirty)">
+                                <div *ngIf="updateForm.controls['pays'].errors.required" class="orange">
+                                    Pays is required
+
+                                </div>
+                                <div *ngIf="updateForm.controls['pays'].errors.minlength" class="orange">
+                                    Pays must have ata last 3 chars
+
+                                </div>
+                                <div *ngIf="updateForm.controls['pays'].errors.maxlength" class="orange">
+                                    Pays must have at most 20 chars
+
+                                </div>
+
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="date" formControlName="price"  placeholder="Color">
+                                    <label for="dataN">Price</label>
+                                </div>
+                            </div>
+                           
+                            <div *ngIf="updateForm.controls['price'].invalid && (updateForm.controls['price'].touched ||
+                            updateForm.controls['price'].dirty)">
+                                <div *ngIf="updateForm.controls['price'].errors.required" class="orange">
+                                    Price is required
+
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" formControlName="guarantee"
+                                        placeholder="Your Name">
+                                    <label for="name">Your Guarantee</label>
+                                </div>
+                            </div>
+                            <div *ngIf="updateForm.controls['guarantee'].invalid && (updateForm.controls['guarantee'].touched ||
+                            updateForm.controls['guarantee'].dirty)">
+                                <div *ngIf="updateForm.controls['guarantee'].errors.required" class="orange">
+                                    Guarantee is required
+
+                                </div>
+                                <div *ngIf="updateForm.controls['guarantee'].errors.minlength" class="orange">
+                                    Guarantee must have ata last 3 chars
+
+                                </div>
+                                <div *ngIf="updateForm.controls['guarantee'].errors.maxlength" class="orange">
+                                    Guarantee must have at most 20 chars
+
+                                </div>
+
+                            </div>
+                          
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" (click)="updateCar()" type="submit">Update Car</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

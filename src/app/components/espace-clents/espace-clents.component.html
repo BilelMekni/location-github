@@ -1,0 +1,47 @@
+<app-banner [title]="title |uppercase " ></app-banner>
+<div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h6 class="text-primary text-uppercase">// Customer Area //</h6>
+        <h1 class="mb-5">Wellcome Customer Area</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="team-item">
+                <div class="position-relative overflow-hidden">
+                    <img class="img-fluid" src="assets/img/pub.png" alt="" height="220px" width="220px">
+                    <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="bg-light text-center p-4">
+                    <h5 class="fw-bold mb-0">Publications</h5>
+                    <small> <button type="submit">
+                        <img src="assets/img/validate.jpg"  (click)="publications()" alt="" srcset="" title="Validate" height="100px" width="100px">
+                    </button>
+                      </small>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="team-item">
+                <div class="position-relative overflow-hidden">
+                    <img class="img-fluid" src="assets/img/set.png" alt="">
+                    <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="bg-light text-center p-4">
+                    <h5 class="fw-bold mb-0">Setting</h5>
+                    <small> <button type="submit">
+                        <img src="assets/img/setting.png" alt="" srcset="" title="Setting" height="100px" width="100px">
+                    </button>
+                      </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="team-item">
+    <div class="position-relative overflow-hidden">
+        <img class="img-fluid" src="{{inputArticle.images}}" alt="">
+        <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
+            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+    <div class="bg-light text-center p-4">
+        <h5 class="fw-bold mb-0">{{inputArticle.name}}</h5>
+        <br>
+        <small>{{inputArticle.description}}</small>
+        <br>
+        <!-- <p>{{inputArticle.price1}}</p><del>{{inputArticle.price2}}</del> -->
+        <h6 [ngClass]="{'win': priceStyle(inputArticle.price1,inputArticle.price2)==1 ,'loss': priceStyle(inputArticle.price1,inputArticle.price2)==-1 ,'draw': priceStyle(inputArticle.price1,inputArticle.price2)==0}">{{inputArticle.price1}}</h6>
+            <h6 class="text-muted ml-2"><del [ngClass]="{'win':priceStyle(inputArticle.price2,inputArticle.price1)==1 ,'loss': priceStyle(inputArticle.price2,inputArticle.price1)==-1 ,'draw': priceStyle(inputArticle.price2,inputArticle.price1)==0}" >{{inputArticle.price2}}</del></h6>
+
+    </div>
+</div>

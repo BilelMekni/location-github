@@ -1,0 +1,44 @@
+<app-banner [title]="title | uppercase" ></app-banner>
+<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+    <h6 class="text-primary text-uppercase">//Cars Table //</h6>
+    <h1 class="mb-5">Hellow Cars Table</h1>
+</div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Images</th>
+        <th scope="col">Name</th>
+        <th scope="col">Matricule</th>
+        <th scope="col">Color</th>
+        <th scope="col">Pays</th>
+        <th scope="col">Price</th>
+        <th scope="col">Guarantee</th>
+        <th scope="col">date</th>
+        <th scope="col">Actions</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let auto of car">
+       <td><img [src]="auto.avatar" alt="" width="70px" height="70px"></td>  
+        <td>{{auto.name}}</td>
+        <td>{{auto.matricule}}</td>
+        <td>{{auto.color}}</td>
+        <td>{{auto.pays}}</td>
+        <td>{{auto.price}}</td>
+        <td>{{auto.guarantee}}</td>
+        <td>{{auto.date}}</td>
+        
+        <td>
+            <input type="image" id="image"    (click)="deleteCars(auto._id)"  alt="" src="/assets/img/delete.png" width="70px" height="70px" />
+            <input type="image" id="image"    (click)="updateCars(auto._id)"  alt="" src="/assets/img/upp.jpg" width="70px" height="70px" />
+            
+        </td>
+
+
+      </tr>
+      
+    </tbody>
+    
+  </table>
